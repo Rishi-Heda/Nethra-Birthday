@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>The Kinetic Celebration - Birthday Bash</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-container": "#ffe16d",
+                        "surface-container": "#edeeef",
+                        "secondary-fixed": "#5af8fb",
+                        "on-secondary-fixed": "#002020",
+                        "background": "#f8f9fa",
+                        "tertiary-fixed": "#ffe16d",
+                        "primary-fixed": "#ffdad8",
+                        "surface-bright": "#f8f9fa",
+                        "secondary": "#00696b",
+                        "surface-container-high": "#e7e8e9",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#2ddbde",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#004f51",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004f51",
+                        "on-background": "#191c1d",
+                        "primary": "#b52330",
+                        "on-primary-container": "#92001b",
+                        "primary-container": "#ffdad8",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-dim": "#d9dadb",
+                        "secondary-container": "#5af8fb",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary": "#705d00",
+                        "surface-tint": "#b52330",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ffb3b0",
+                        "on-tertiary-container": "#544600",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#410007",
+                        "inverse-surface": "#2e3132",
+                        "on-surface-variant": "#474747",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "outline-variant": "#c6c6c6",
+                        "outline": "#777777",
+                        "on-primary-fixed-variant": "#92001b",
+                        "inverse-primary": "#ffb3b0",
+                        "on-surface": "#191c1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"],
+                        "label": ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #b52330, #8E24AA, #00696b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f0f;
+            border-radius: 50%;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased overflow-x-hidden relative">
+    <!-- Decorative Gradient Blobs -->
+    <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary-container/40 blur-[100px] -z-10 pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-secondary-container/30 blur-[120px] -z-10 pointer-events-none"></div>
+    <div class="fixed top-[40%] left-[20%] w-[30%] h-[30%] rounded-full bg-tertiary-container/30 blur-[90px] -z-10 pointer-events-none"></div>
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(255,90,95,0.08)] no-border bg-surface-container-low font-['Plus_Jakarta_Sans'] font-bold tracking-tight">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="text-2xl font-black text-primary tracking-tighter">
+                Birthday Bash
+            </div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-primary border-b-4 border-primary pb-1 hover:scale-105 transition-transform duration-300" href="#memories">Memories</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors hover:scale-105 transition-transform duration-300" href="#timeline">Timeline</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors hover:scale-105 transition-transform duration-300" href="#playlist">Playlist</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors hover:scale-105 transition-transform duration-300" href="#rsvp">RSVP</a>
+            </div>
+            <button class="bg-primary text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-[0_8px_32px_rgba(181,35,48,0.2)]">
+                Join Party
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20">
+        <!-- Hero Section -->
+        <section class="min-h-[80vh] flex flex-col items-center justify-center relative px-6 text-center max-w-5xl mx-auto">
+            <div class="absolute inset-0 pointer-events-none overflow-hidden">
+                <!-- Abstract Confetti shapes -->
+                <div class="absolute top-[20%] left-[10%] w-8 h-8 rounded-full bg-primary rotate-12 opacity-80 animate-float" style="animation-delay: 0s;"></div>
+                <div class="absolute top-[15%] right-[15%] w-6 h-6 rounded-sm bg-secondary rotate-45 opacity-70 animate-float" style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-[30%] left-[20%] w-10 h-10 rounded-xl bg-tertiary opacity-60 animate-float" style="animation-delay: 2s;"></div>
+                <div class="absolute bottom-[20%] right-[25%] w-8 h-8 rounded-full bg-[#8E24AA] opacity-80 animate-float" style="animation-delay: 1.5s;"></div>
+            </div>
+            <span class="px-6 py-2 bg-secondary-container text-on-secondary-container rounded-full text-sm font-bold tracking-widest uppercase mb-6 shadow-sm">The Kinetic Celebration</span>
+            <h1 class="text-[clamp(3.5rem,10vw,7rem)] font-extrabold leading-[0.9] tracking-tighter text-on-surface mb-6">
+                <span class="text-gradient">HAPPY</span><br/>
+                BIRTHDAY!
+            </h1>
+            <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-10 font-medium">
+                Get ready for a night of maximum vibes, vibrant colors, and unforgettable memories. The party of the year starts here.
+            </p>
+            <a class="bg-primary hover:bg-[#a01c25] text-on-primary px-10 py-5 rounded-full text-xl font-bold tracking-wide transition-all duration-300 hover:scale-[1.05] shadow-[0_12px_40px_-10px_rgba(181,35,48,0.5)] flex items-center gap-3 group" href="#rsvp">
+                PRESS FOR MAXIMUM PARTY!
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">celebration</span>
+            </a>
+        </section>
+
+        <!-- Core Memories (Bento Grid) -->
+        <section class="py-20 px-6 max-w-7xl mx-auto" id="memories">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-12 text-center">Core Memories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[650px]">
+                <!-- Large Image Card -->
+                <div class="col-span-1 md:col-span-2 row-span-1 md:row-span-2 rounded-xl overflow-hidden relative group bg-surface-container-low p-2">
+                    <div class="w-full h-full rounded-lg overflow-hidden relative">
+                        <img alt="Friends celebrating" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80&w=2069&auto=format&fit=crop" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-8 left-8 right-8">
+                            <span class="bg-white/20 backdrop-blur-md text-white px-4 py-1 rounded-full text-sm font-semibold mb-3 inline-block">The Crew</span>
+                            <h3 class="text-4xl font-bold text-white">Last Year's Bash</h3>
+                            <p class="text-white/80 mt-2 max-w-md">Remembering the night that changed everything. The energy was electric.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text Card -->
+                <div class="col-span-1 rounded-xl bg-primary-container p-8 flex flex-col justify-center relative overflow-hidden transition-transform duration-300 hover:-translate-y-2 group">
+                    <div class="absolute -right-6 -top-6 w-32 h-32 bg-white/30 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500"></div>
+                    <span class="material-symbols-outlined text-primary text-5xl mb-4" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                    <h3 class="text-2xl font-bold text-on-primary-container mb-2">Unforgettable Moments</h3>
+                    <p class="text-on-primary-container/80 text-lg">Every laugh, every dance, every memory captured in bright colors.</p>
+                </div>
+                <!-- Small Image/Pattern Card -->
+                <div class="col-span-1 rounded-xl bg-tertiary-container p-6 flex flex-col items-center justify-center text-center transition-transform duration-300 hover:-translate-y-2 group">
+                    <div class="w-20 h-20 bg-white/40 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <span class="material-symbols-outlined text-on-tertiary-container text-4xl">photo_camera</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-on-tertiary-container">Snap & Share</h3>
+                    <p class="text-on-tertiary-container/80 mt-2">Tag us in your best shots!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Section Mockup -->
+        <section id="rsvp" class="py-20 px-6 max-w-4xl mx-auto text-center">
+            <div class="bg-surface-container-low rounded-xl p-12 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <span class="material-symbols-outlined text-[10rem]">mail</span>
+                </div>
+                <h2 class="text-4xl font-bold mb-4">Are You Ready?</h2>
+                <p class="text-xl text-on-surface-variant mb-8">Confirm your attendance and join the most anticipated party of the year.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg transition-all">I'm Coming!</button>
+                    <button class="bg-white text-on-surface border border-outline px-8 py-4 rounded-full font-bold text-lg hover:bg-surface-container transition-all">Maybe Next Time</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full rounded-t-[3rem] bg-surface-container-low flex flex-col md:flex-row justify-between items-center px-12 py-10 text-sm border-t border-outline-variant">
+        <div class="text-lg font-bold text-primary mb-6 md:mb-0">
+            Birthday Bash
+        </div>
+        <div class="text-secondary font-bold text-center md:text-left mb-6 md:mb-0 opacity-80">
+            © 2024 The Kinetic Celebration. Built for Joy.
+        </div>
+        <div class="flex gap-6">
+            <a class="text-slate-500 hover:text-primary transition-colors" href="#">Privacy</a>
+            <a class="text-slate-500 hover:text-primary transition-colors" href="#">Terms</a>
+            <a class="text-slate-500 hover:text-primary transition-colors" href="#">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple confetti effect on click
+        document.querySelector('a[href="#rsvp"]').addEventListener('click', function(e) {
+            for(let i=0; i<50; i++) {
+                createConfetti(e.clientX, e.clientY);
+            }
+        });
+
+        function createConfetti(x, y) {
+            const colors = ['#b52330', '#00696b', '#705d00', '#8E24AA', '#5af8fb'];
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = x + 'px';
+            confetti.style.top = y + 'px';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            const destX = x + (Math.random() - 0.5) * 400;
+            const destY = y + (Math.random() - 0.5) * 400;
+            
+            document.body.appendChild(confetti);
+            
+            confetti.animate([
+                { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
+                { transform: `translate(${destX - x}px, ${destY - y}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+            ], {
+                duration: 1000 + Math.random() * 1000,
+                easing: 'cubic-bezier(0, .9, .57, 1)',
+                fill: 'forwards'
+            }).onfinish = () => confetti.remove();
+        }
+    </script>
+</body>
+</html>
